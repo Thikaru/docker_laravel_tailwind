@@ -13,3 +13,7 @@ migrate-fresh:
 	docker compose exec app php artisan migrate:fresh --seed
 migrate-dacapo:
 	docker compose exec app php artisan dacapo --seed
+npm-dev:
+	docker compose exec app npm run dev
+npm-watch:
+	docker compose exec app npm run watch

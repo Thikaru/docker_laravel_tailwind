@@ -1,4 +1,6 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss');//追記
+const glob = require('glob');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +13,22 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+// mix.js('resources/js/app.js', 'public/js')
+//     .postCss('resources/css/app.css', 'public/css', [
+//         require("tailwindcss"),
+//     ]);
+
+glob.sync('resources/sass/*.scss').map(function(file) {
+    mix.sass(file, 'public/css').options({
+        processCssUrls: false,
+    });
+});
+
+mix.options({ 
+        processCssUrls: false, //公式ドキュメント参照
+        postCss: [ tailwindcss('./tailwind.config.js') ], 
+    }); 
+
+if (mix.inProduction()) {
+    mix.version();
+}
