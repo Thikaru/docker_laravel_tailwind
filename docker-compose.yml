@@ -19,7 +19,7 @@ services:
     build: ./infra/mysql
     volumes:
       - db-store:/var/lib/mysql
-#phpmyadmin
+  #phpmyadmin
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     environment:
