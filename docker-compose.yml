@@ -19,6 +19,13 @@ services:
     build: ./infra/mysql
     volumes:
       - db-store:/var/lib/mysql
+#phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: 'db'
+    ports:
+      - '127.0.0.1:8095:80'
 
 volumes:
   db-store:
