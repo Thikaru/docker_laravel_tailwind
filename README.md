@@ -2,7 +2,8 @@
 
 <参考サイト>
 (環境構築 docker&laravel)
-・ 「https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4」 2022/09/04
+・【超入門】20 分で Laravel 開発環境を爆速構築する Docker ハンズオン 「https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4」 2022/09/04
+・
 
 <page>
 ・http://localhost:8787/   [webpage]
@@ -31,3 +32,10 @@ app コンテナに入り、Laravel をインストール
 (6)[app] php artisan storage:link
 (7)[app] php artisan migrate
 (8)[app] exit
+
+<使用するコマンド>
+・docker compose ps //起動しているコンテナの一覧を表示
+・docker compose build //コンテナを生成
+・compose -V //compose のバージョン確認
+・docker compose exec サービス名 コマンド
+・
